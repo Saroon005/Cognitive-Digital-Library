@@ -66,7 +66,8 @@ async def search_documents(
                 "$or": [
                     {"title": {"$regex": q, "$options": "i"}},
                     {"content": {"$regex": q, "$options": "i"}},
-                    {"tags": {"$in": [{"$regex": q, "$options": "i"}]}}
+                    {"tags": {"$regex": q, "$options": "i"}},
+                    {"authors": {"$regex": q, "$options": "i"}}
                 ]
             },
             {
